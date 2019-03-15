@@ -8,6 +8,7 @@ float math::abs(float a){
     return (a >= 0) ? a : -a;
 }
 
+
 /*
     === min ===
     returns the smaller number of given integers a and b
@@ -16,6 +17,7 @@ float math::min(float a, float b){
     return (a <= b) ? a : b;
 }
 
+
 /*
     === min ===
     returns the bigger number of given integers a and b
@@ -23,6 +25,7 @@ float math::min(float a, float b){
 float math::max(float a, float b){
     return (a >= b) ? a : b;
 }
+
 
 /*
     === sign ===
@@ -34,6 +37,7 @@ int sign(auto x){
     else return 0;
 }
 
+
 /*
     === factorial ===
     iteratively calculates n factorial
@@ -43,6 +47,7 @@ long double math::factorial(int n){
     for (int i = 2 ; i <= n ; i++) prod *= i;
     return prod;
 }
+
 
 /*
     === power ===
@@ -77,6 +82,7 @@ double math::power(double x, double a){
     return prod;
 }
 
+
 /*
     === round ===
     rounds the given decimal to an integer where as .5 yields the next bigger
@@ -86,6 +92,7 @@ int math::round(auto x){
     float diff = x - (int) x;
     return (diff >= 0.5) ? (int) x + 1 : (int) x;
 }
+
 
 /*
     === exp ===
@@ -102,6 +109,7 @@ long double math::exp(long double x, unsigned iterations){
 	}
 	return sum;
 }
+
 
 /*
     === natlog_taylor ===
@@ -121,6 +129,7 @@ long double natlog_taylor(long double x, unsigned iterations = 100){
     return sum;
 }
 
+
 /*
     === ln ===
     returns the value at x of the natural logarithm with given iterations.
@@ -133,6 +142,7 @@ long double math::ln(long double x, unsigned iterations){
     return natlog_taylor(num, iterations) - natlog_taylor(den, iterations);
 }
 
+
 /*
     === log ===
     returns the value at x of the logarithm to a given base. x is thereby
@@ -142,6 +152,7 @@ long double math::log(long double x, int base){
     return 1 / math::ln(base) * math::ln(x);
 }
 
+
 /*
     === root ===
     returns the value of the n-th root of x by calulating x^(1/n)
@@ -149,6 +160,7 @@ long double math::log(long double x, int base){
 long double math::root(long double x, int n){
     return math::exp((float) 1/n * math::ln(x));
 }
+
 
 /*
     === mod ===
@@ -164,6 +176,7 @@ long double math::mod(float n, float m){
     return n - m1 + m;
 }
 
+
 /*
     == sin_taylor ===
     returns the value at x of the taylor polynomial of sin(x) with given
@@ -178,6 +191,7 @@ long double sin_taylor(long double x, unsigned iterations){
     return sum;
 }
 
+
 /*
     === sin ===
     returns the value of sin(x) with given iterations (precision). x is
@@ -191,6 +205,7 @@ long double math::sin(long double x, unsigned iterations){
     return (mod(x, 2 * math::PI) - mod(x, math::PI) < 0.1) ? val : -val;
 }
 
+
 /*
     === cos ===
     returns the value of cos(x) with given iterations (precision). x is
@@ -199,6 +214,7 @@ long double math::sin(long double x, unsigned iterations){
 long double math::cos(long double x, unsigned iterations){
     return math::sin(x + math::PI / 2, iterations);
 }
+
 
 /*
     === tan ===
@@ -209,15 +225,27 @@ long double math::tan(long double x, unsigned iterations){
     return math::sin(x, iterations) / math::cos(x, iterations);
 }
 
-long double arcsin(){
+
+/*
+    === arcsin ==
+*/
+long double arcsin(long double x){
     // todo
 }
 
-long double arccos(){
+
+/*
+    === arcsin ==
+*/
+long double arccos(long double x){
     // todo
 }
 
-long double arctan(){
+
+/*
+    === arcsin ==
+*/
+long double arctan(long double x){
     // todo
 }
 
@@ -243,6 +271,7 @@ int math::gcd(int a, int b){
 
 }
 
+
 /*
     === lcm ===
     Todo
@@ -250,6 +279,7 @@ int math::gcd(int a, int b){
 int math::lcm(int a, int b){
     return abs(a * b)/ math::gcd(a, b);
 }
+
 
 /*
     === nCr ===
